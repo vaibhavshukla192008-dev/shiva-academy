@@ -1,0 +1,1917 @@
+/* =========================================================
+   SHIVA ACADEMY FITNESS CENTRE
+   PREMIUM ORANGE FITNESS THEME
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   ROOT COLORS
+   ========================================================= */
+
+:root {
+    --black: #070707;
+    --black-2: #0b0b0b;
+    --charcoal: #111111;
+    --card: #171717;
+    --card-light: #1d1d1d;
+
+    --orange: #ff6500;
+    --orange-light: #ff8a2a;
+    --orange-dark: #d94f00;
+
+    --white: #ffffff;
+    --text: #eeeeee;
+    --muted: #999999;
+    --muted-dark: #666666;
+
+    --border: rgba(255,255,255,0.09);
+    --orange-border: rgba(255,101,0,0.45);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--orange);
+    color: #fff;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 19px 5%;
+
+    background: rgba(7, 7, 7, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+
+    transition: 0.3s ease;
+}
+
+.navbar::after {
+    content: "";
+
+    position: absolute;
+    bottom: -1px;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--orange),
+        transparent
+    );
+
+    opacity: 0.45;
+}
+
+.logo {
+    text-decoration: none;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    line-height: 1;
+
+    transition: 0.3s ease;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+}
+
+nav a {
+    position: relative;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: #bdbdbd;
+
+    transition: 0.3s ease;
+}
+
+nav a:not(.nav-btn)::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--white);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.nav-btn {
+    padding: 10px 18px;
+
+    color: #fff;
+
+    border: 1px solid var(--orange);
+    border-radius: 3px;
+
+    background: rgba(255,101,0,0.08);
+
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--orange);
+    color: #fff;
+
+    box-shadow: 0 8px 25px rgba(255,101,0,0.25);
+}
+
+.nav-btn::after {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 150px 8% 100px;
+
+    overflow: hidden;
+
+    background: var(--black);
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    filter:
+        grayscale(5%)
+        contrast(1.08)
+        saturate(1.05);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(255,101,0,0.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.94) 0%,
+            rgba(0,0,0,0.78) 40%,
+            rgba(0,0,0,0.45) 75%,
+            rgba(0,0,0,0.78) 100%
+        );
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.35),
+            transparent 35%,
+            transparent 70%,
+            rgba(0,0,0,0.9)
+        );
+}
+
+.hero-content,
+.hero-scroll {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 980px;
+
+    animation: heroIn 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--orange);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 22px;
+
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 35px;
+    height: 2px;
+
+    background: var(--orange);
+
+    box-shadow: 0 0 10px rgba(255,101,0,0.6);
+}
+
+.hero h1 {
+    max-width: 950px;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(65px, 10vw, 135px);
+
+    font-weight: 700;
+
+    line-height: 0.84;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 32px;
+
+    text-shadow: 0 12px 40px rgba(0,0,0,0.55);
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--orange);
+
+    text-shadow:
+        0 0 35px rgba(255,101,0,0.18);
+}
+
+.hero-text {
+    max-width: 590px;
+
+    color: #d0d0d0;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons,
+.cta-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 51px;
+
+    padding: 14px 26px;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    border-radius: 3px;
+
+    transition: 0.35s ease;
+
+    overflow: hidden;
+}
+
+.primary-btn {
+    background: var(--orange);
+
+    color: #fff;
+
+    border: 1px solid var(--orange);
+
+    box-shadow:
+        0 10px 30px rgba(255,101,0,0.18);
+}
+
+.primary-btn:hover {
+    background: var(--orange-light);
+
+    border-color: var(--orange-light);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 40px rgba(255,101,0,0.3);
+}
+
+.secondary-btn {
+    color: #fff;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(8px);
+}
+
+.secondary-btn:hover {
+    background: var(--orange);
+
+    border-color: var(--orange);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(255,101,0,0.22);
+}
+
+.hero-scroll {
+    position: absolute;
+
+    right: 6%;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #888;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.hero-scroll::before {
+    content: "";
+
+    width: 45px;
+    height: 1px;
+
+    background: var(--orange);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+    position: relative;
+
+    padding: 130px 7%;
+
+    overflow: hidden;
+}
+
+.section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 7%;
+
+    width: 86%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,101,0,0.35),
+        transparent
+    );
+}
+
+.section-number {
+    color: var(--orange);
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about {
+    background:
+        radial-gradient(
+            circle at 90% 35%,
+            rgba(255,101,0,0.07),
+            transparent 30%
+        ),
+        var(--black-2);
+}
+
+.about-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 110px;
+
+    align-items: center;
+}
+
+.about h2,
+.services h2,
+.gallery-section h2,
+.membership h2 {
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(48px, 6vw, 78px);
+
+    font-weight: 600;
+
+    line-height: 0.92;
+
+    letter-spacing: -2px;
+
+    text-transform: uppercase;
+}
+
+.about h2 span,
+.services h2 span,
+.gallery-section h2 span,
+.membership h2 span,
+.cta h2 span {
+    color: var(--orange);
+}
+
+.about-copy {
+    position: relative;
+
+    color: #a7a7a7;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+.about-copy::before {
+    content: "SHA";
+
+    position: absolute;
+
+    top: -80px;
+    right: -15px;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 110px;
+
+    color: rgba(255,101,0,0.035);
+
+    pointer-events: none;
+}
+
+.about-copy p + p {
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services {
+    background: var(--charcoal);
+}
+
+.section-heading {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 60px;
+}
+
+.section-heading > p {
+    max-width: 380px;
+
+    color: #858585;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.service-list {
+    max-width: 1150px;
+
+    margin: 70px auto 0;
+}
+
+.service-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 70px 85px 1fr 45px;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 30px 20px;
+
+    border-top: 1px solid #292929;
+
+    transition: 0.4s ease;
+
+    overflow: hidden;
+}
+
+.service-card:last-child {
+    border-bottom: 1px solid #292929;
+}
+
+.service-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,101,0,0.12),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    transition: 0.4s ease;
+}
+
+.service-card:hover {
+    padding-left: 35px;
+
+    background: rgba(255,101,0,0.035);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-number {
+    color: #555;
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #444;
+
+    border-radius: 50%;
+
+    color: #ddd;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    transition: 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    background: var(--orange);
+
+    color: #fff;
+
+    border-color: var(--orange);
+
+    transform: rotate(8deg);
+
+    box-shadow:
+        0 0 25px rgba(255,101,0,0.2);
+}
+
+.service-card h3 {
+    font-family: "Oswald", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 5px;
+
+    text-transform: uppercase;
+}
+
+.service-card p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.arrow {
+    font-size: 28px;
+
+    color: #555;
+
+    transition: 0.4s ease;
+}
+
+.service-card:hover .arrow {
+    color: var(--orange);
+
+    transform: translateX(7px);
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-section {
+    background: var(--black);
+}
+
+.gallery-grid {
+    max-width: 1150px;
+
+    margin: 65px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    grid-template-rows: 300px 280px;
+
+    gap: 14px;
+}
+
+.gallery-grid > div {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #111;
+
+    border: 1px solid #292929;
+}
+
+.gallery-grid > div::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(0,0,0,0.65)
+        );
+
+    pointer-events: none;
+
+    transition: 0.4s ease;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter:
+        grayscale(10%)
+        contrast(1.05);
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.8,.2,1),
+        filter 0.5s ease;
+}
+
+.gallery-grid > div:hover {
+    border-color: rgba(255,101,0,0.5);
+}
+
+.gallery-grid > div:hover img {
+    transform: scale(1.08);
+
+    filter:
+        grayscale(0%)
+        contrast(1.1)
+        saturate(1.05);
+}
+
+.gallery-grid > div:hover::after {
+    background:
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            rgba(255,101,0,0.12)
+        );
+}
+
+.gallery-large {
+    grid-row: span 2;
+}
+
+.gallery-wide {
+    grid-column: span 1;
+}
+
+
+/* =========================================================
+   MEMBERSHIP
+   ========================================================= */
+
+.membership {
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255,101,0,0.08),
+            transparent 38%
+        ),
+        var(--charcoal);
+}
+
+.plans {
+    max-width: 1150px;
+
+    margin: 65px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.plan {
+    position: relative;
+
+    min-height: 350px;
+
+    padding: 38px 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #111
+        );
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    transition: 0.45s ease;
+}
+
+.plan::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--orange-light)
+        );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: 0.45s ease;
+}
+
+.plan::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(255,101,0,0.06);
+
+    transition: 0.4s ease;
+}
+
+.plan:hover {
+    transform: translateY(-9px);
+
+    border-color: rgba(255,101,0,0.5);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.4);
+}
+
+.plan:hover::before {
+    transform: scaleX(1);
+}
+
+.plan:hover::after {
+    transform: scale(1.35);
+}
+
+.plan-type {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #888;
+
+    font-weight: 800;
+}
+
+.plan h3 {
+    font-family: "Oswald", sans-serif;
+
+    font-size: 54px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    margin: 20px 0 8px;
+
+    color: #fff;
+}
+
+.plan-desc {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.plan a {
+    position: relative;
+    z-index: 2;
+
+    margin-top: auto;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: #ddd;
+
+    transition: 0.3s ease;
+}
+
+.plan a::after {
+    content: "→";
+
+    color: var(--orange);
+
+    font-size: 17px;
+
+    transition: 0.3s ease;
+}
+
+.plan a:hover {
+    color: var(--orange);
+}
+
+.plan a:hover::after {
+    transform: translateX(5px);
+}
+
+.popular-plan {
+    border-color: rgba(255,101,0,0.5);
+
+    background:
+        linear-gradient(
+            145deg,
+            #21170f,
+            #151515
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,101,0,0.05);
+}
+
+.popular-label {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 900;
+
+    padding: 6px 9px;
+
+    background: var(--orange);
+
+    color: #fff;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 5px 15px rgba(255,101,0,0.25);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta {
+    position: relative;
+
+    padding: 160px 7%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.94),
+            rgba(0,0,0,0.72),
+            rgba(0,0,0,0.94)
+        ),
+        url("/static/images/gym-hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "TRAIN";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(120px, 22vw, 300px);
+
+    font-weight: 700;
+
+    color: rgba(255,101,0,0.045);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+.cta > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+.cta h2 {
+    font-family: "Oswald", sans-serif;
+
+    font-size: clamp(55px, 8vw, 105px);
+
+    font-weight: 600;
+
+    line-height: 0.88;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+.cta h2 span {
+    color: var(--orange);
+}
+
+.cta > p:not(.eyebrow) {
+    max-width: 600px;
+
+    margin: 0 auto 28px;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+.cta-buttons {
+    justify-content: center;
+}
+
+
+/* =========================================================
+   LOCATION / HOURS / INSTAGRAM
+   ========================================================= */
+
+.info-section {
+    background: var(--black-2);
+}
+
+.info-grid {
+    max-width: 1150px;
+
+    margin: 65px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1.4fr 0.8fr;
+
+    gap: 15px;
+}
+
+.info-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #101010
+        );
+
+    border: 1px solid #292929;
+
+    border-radius: 5px;
+
+    padding: 32px;
+
+    transition: 0.35s ease;
+
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 35%;
+    height: 2px;
+
+    background: var(--orange);
+
+    opacity: 0;
+
+    transition: 0.35s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255,101,0,0.4);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.25);
+}
+
+.info-card:hover::before {
+    opacity: 1;
+
+    width: 100%;
+}
+
+.info-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+}
+
+.info-label::before {
+    content: "";
+
+    width: 20px;
+    height: 2px;
+
+    background: var(--orange);
+}
+
+.info-card > p {
+    color: #aaa;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.hours-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.hours-list div {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #242424;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+.hours-list strong {
+    color: #eee;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+.hours-list .closed {
+    color: #555;
+}
+
+.instagram-card {
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.instagram-icon {
+    width: 64px;
+    height: 64px;
+
+    margin: 4px auto 20px;
+
+    padding: 10px;
+
+    border: 1px solid #333;
+
+    border-radius: 16px;
+
+    transition: 0.4s ease;
+}
+
+.instagram-card:hover .instagram-icon {
+    background: var(--orange);
+
+    border-color: var(--orange);
+
+    transform: translateY(-5px) rotate(-3deg);
+
+    box-shadow:
+        0 10px 30px rgba(255,101,0,0.25);
+}
+
+.instagram-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: #fff;
+
+    stroke-width: 1.8;
+}
+
+.instagram-icon .instagram-dot {
+    fill: #fff;
+
+    stroke: none;
+}
+
+.instagram-card:hover .instagram-icon svg {
+    stroke: #fff;
+}
+
+.instagram-card h3 {
+    font-family: "Oswald", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+
+    text-transform: uppercase;
+}
+
+.instagram-card p {
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: #040404;
+
+    padding: 45px 7%;
+
+    border-top: 1px solid rgba(255,101,0,0.18);
+}
+
+.footer-top {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid #1b1b1b;
+}
+
+.footer-top .logo {
+    font-size: 20px;
+}
+
+.footer-top p {
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+.footer-bottom {
+    max-width: 1150px;
+
+    margin: 20px auto 0;
+
+    color: #444;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 18px 4%;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    .about-grid {
+        gap: 60px;
+    }
+
+    .gallery-grid {
+        grid-template-rows: 270px 240px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .instagram-card {
+        grid-column: span 2;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .navbar {
+        padding: 15px 5%;
+
+        background: rgba(7,7,7,0.93);
+    }
+
+    .logo {
+        font-size: 17px;
+        letter-spacing: 1.5px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-btn {
+        padding: 8px 9px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 125px 7% 80px;
+
+        align-items: center;
+    }
+
+    .hero-overlay {
+        background:
+            radial-gradient(
+                circle at 80% 40%,
+                rgba(255,101,0,0.13),
+                transparent 35%
+            ),
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,0.93),
+                rgba(0,0,0,0.66)
+            );
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 15vw, 76px);
+
+        letter-spacing: -2px;
+
+        line-height: 0.88;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+
+        line-height: 1.75;
+
+        max-width: 95%;
+
+        margin-bottom: 25px;
+    }
+
+    .eyebrow {
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+        width: 20px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        min-height: 46px;
+
+        padding: 12px 17px;
+
+        font-size: 9px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+
+    /* GENERAL */
+
+    .section {
+        padding: 85px 6%;
+    }
+
+    .section::before {
+        left: 6%;
+
+        width: 88%;
+    }
+
+    .section-number {
+        margin-bottom: 25px;
+
+        font-size: 10px;
+    }
+
+
+    /* ABOUT */
+
+    .about-grid {
+        display: block;
+    }
+
+    .about h2,
+    .services h2,
+    .gallery-section h2,
+    .membership h2 {
+        font-size: 48px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .about-copy {
+        margin-top: 35px;
+
+        font-size: 14px;
+
+        line-height: 1.85;
+    }
+
+    .about-copy::before {
+        display: none;
+    }
+
+
+    /* SERVICES */
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 22px;
+
+        font-size: 13px;
+    }
+
+    .service-list {
+        margin-top: 45px;
+    }
+
+    .service-card {
+        grid-template-columns: 32px 52px 1fr 20px;
+
+        gap: 10px;
+
+        padding: 24px 5px;
+    }
+
+    .service-card:hover {
+        padding-left: 10px;
+    }
+
+    .service-icon {
+        width: 46px;
+        height: 46px;
+
+        font-size: 8px;
+    }
+
+    .service-card h3 {
+        font-size: 17px;
+    }
+
+    .service-card p {
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+    .service-number {
+        font-size: 10px;
+    }
+
+    .arrow {
+        font-size: 20px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            repeat(4, 250px);
+
+        gap: 10px;
+
+        margin-top: 45px;
+    }
+
+    .gallery-large,
+    .gallery-wide {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+
+    /* MEMBERSHIP */
+
+    .plans {
+        grid-template-columns: 1fr;
+
+        margin-top: 45px;
+
+        gap: 12px;
+    }
+
+    .plan {
+        min-height: 290px;
+
+        padding: 30px 25px;
+    }
+
+    .plan h3 {
+        font-size: 47px;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 105px 6%;
+    }
+
+    .cta h2 {
+        font-size: 57px;
+
+        letter-spacing: -2px;
+    }
+
+    .cta > p:not(.eyebrow) {
+        font-size: 12px;
+    }
+
+    .cta::before {
+        font-size: 100px;
+    }
+
+
+    /* INFO */
+
+    .info-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 45px;
+    }
+
+    .instagram-card {
+        grid-column: auto;
+    }
+
+    .info-card {
+        padding: 25px;
+    }
+
+    .hours-list div {
+        font-size: 11px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 35px 6%;
+    }
+
+    .footer-top {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    .footer-bottom {
+        text-align: center;
+
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 7px;
+    }
+
+    .nav-btn {
+        padding: 7px 8px;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero h1 {
+        font-size: 51px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        flex: 1;
+    }
+
+    .about h2,
+    .services h2,
+    .gallery-section h2,
+    .membership h2 {
+        font-size: 43px;
+    }
+
+    .service-card {
+        grid-template-columns: 25px 45px 1fr 15px;
+    }
+
+    .service-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .service-card h3 {
+        font-size: 15px;
+    }
+
+    .service-card p {
+        font-size: 9px;
+    }
+
+    .gallery-grid {
+        grid-template-rows: repeat(4, 220px);
+    }
+
+    .cta h2 {
+        font-size: 50px;
+    }
+}

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shiva Academy Fitness Centre | Lucknow</title>
+
+    <meta name="description"
+          content="Shiva Academy Fitness Centre in Lucknow. Train with purpose, build strength and improve your fitness. Contact us for membership details.">
+
+    <meta name="theme-color" content="#ff6500">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="#home"
+       class="logo"
+       aria-label="Shiva Academy Fitness Centre Home">
+        SHIVA <span>ACADEMY</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#membership">Plans</a>
+        <a href="#location">Location</a>
+
+        <a href="#contact" class="nav-btn">
+            Join Now
+        </a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="{{ url_for('static', filename='images/gym-hero.jpg') }}"
+        aria-label="Shiva Academy Fitness Centre gym video">
+
+        <source
+            src="{{ url_for('static', filename='hero-video.mp4') }}"
+            type="video/mp4">
+
+        Your browser does not support the video element.
+
+    </video>
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            STRENGTH • FITNESS • DISCIPLINE
+        </p>
+
+        <h1>
+            BUILD YOUR<br>
+            <span>STRONGEST</span> SELF.
+        </h1>
+
+        <p class="hero-text">
+            Train with purpose. Build better habits.
+            Become stronger every day at
+            Shiva Academy Fitness Centre.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#membership"
+               class="primary-btn">
+                Explore Membership
+            </a>
+
+            <a href="#gallery"
+               class="secondary-btn">
+                View Gym
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <a href="#about"
+       class="hero-scroll"
+       aria-label="Scroll to About section">
+        SCROLL TO EXPLORE ↓
+    </a>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about section" id="about">
+
+    <div class="section-number">
+        01
+    </div>
+
+    <div class="about-grid">
+
+        <div>
+
+            <p class="eyebrow">
+                ABOUT SHIVA ACADEMY
+            </p>
+
+            <h2>
+                MORE THAN<br>
+                JUST A <span>GYM.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="about-copy">
+
+            <p>
+                Shiva Academy Fitness Centre is built for people
+                who are serious about becoming healthier,
+                stronger and more confident.
+            </p>
+
+            <p>
+                Whether you're starting your fitness journey
+                or working towards your next goal, our space
+                is designed to keep you moving.
+            </p>
+
+            <a href="#contact" class="text-link">
+                Start Your Journey →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services section" id="services">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                WHAT WE DO
+            </p>
+
+            <h2>
+                TRAIN <span>BETTER.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            Everything you need for a focused
+            and consistent workout routine.
+        </p>
+
+    </div>
+
+
+    <div class="service-list">
+
+
+        <!-- SERVICE 01 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                01
+            </span>
+
+            <div class="service-icon">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    Strength Training
+                </h3>
+
+                <p>
+                    Build strength and improve your
+                    overall fitness with proper equipment.
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                ↗
+            </span>
+
+        </div>
+
+
+        <!-- SERVICE 02 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                02
+            </span>
+
+            <div class="service-icon">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    Personal Training
+                </h3>
+
+                <p>
+                    Focused guidance to help you
+                    stay consistent with your goals.
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                ↗
+            </span>
+
+        </div>
+
+
+        <!-- SERVICE 03 -->
+
+        <div class="service-card">
+
+            <span class="service-number">
+                03
+            </span>
+
+            <div class="service-icon">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    Cardio Training
+                </h3>
+
+                <p>
+                    Improve stamina and keep your
+                    workouts active and challenging.
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                ↗
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery-section section" id="gallery">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                INSIDE SHIVA ACADEMY
+            </p>
+
+            <h2>
+                THE <span>SPACE.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            Take a look inside the training environment
+            at Shiva Academy Fitness Centre.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-large">
+
+            <img
+                src="{{ url_for('static', filename='images/gym-1.jpg') }}"
+                alt="Inside Shiva Academy Fitness Centre"
+                loading="lazy">
+
+        </div>
+
+
+        <div>
+
+            <img
+                src="{{ url_for('static', filename='images/gym-2.jpg') }}"
+                alt="Gym equipment at Shiva Academy Fitness Centre"
+                loading="lazy">
+
+        </div>
+
+
+        <div>
+
+            <img
+                src="{{ url_for('static', filename='images/gym-3.jpg') }}"
+                alt="Training area at Shiva Academy Fitness Centre"
+                loading="lazy">
+
+        </div>
+
+
+        <div class="gallery-wide">
+
+            <img
+                src="{{ url_for('static', filename='images/gym-4.jpg') }}"
+                alt="Fitness training area at Shiva Academy Fitness Centre"
+                loading="lazy">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MEMBERSHIP ================= -->
+
+<section class="membership section" id="membership">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                MEMBERSHIP
+            </p>
+
+            <h2>
+                PICK YOUR<br>
+                <span>PLAN.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            Simple plans for different
+            training commitments.
+        </p>
+
+    </div>
+
+
+    <div class="plans">
+
+
+        <!-- MONTHLY -->
+
+        <div class="plan">
+
+            <p class="plan-type">
+                MONTHLY
+            </p>
+
+            <h3>
+                ₹1,000
+            </h3>
+
+            <p class="plan-desc">
+                Flexible monthly membership.
+            </p>
+
+            <a href="#contact">
+                Get Started →
+            </a>
+
+        </div>
+
+
+        <!-- QUARTERLY -->
+
+        <div class="plan popular-plan">
+
+            <div class="popular-label">
+                MOST POPULAR
+            </div>
+
+            <p class="plan-type">
+                QUARTERLY
+            </p>
+
+            <h3>
+                ₹2,500
+            </h3>
+
+            <p class="plan-desc">
+                A great choice for consistent training.
+            </p>
+
+            <a href="#contact">
+                Get Started →
+            </a>
+
+        </div>
+
+
+        <!-- YEARLY -->
+
+        <div class="plan">
+
+            <p class="plan-type">
+                YEARLY
+            </p>
+
+            <h3>
+                ₹8,000
+            </h3>
+
+            <p class="plan-desc">
+                Long-term membership option.
+            </p>
+
+            <a href="#contact">
+                Get Started →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <p class="pricing-note">
+        *Membership prices should be confirmed with Shiva Academy Fitness Centre.
+    </p>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta" id="contact">
+
+    <p class="eyebrow">
+        YOUR JOURNEY STARTS HERE
+    </p>
+
+    <h2>
+        READY TO<br>
+        <span>GET STRONGER?</span>
+    </h2>
+
+    <p>
+        Contact Shiva Academy Fitness Centre
+        for membership details.
+    </p>
+
+
+    <div class="cta-buttons">
+
+        <a href="tel:+918874021777"
+           class="primary-btn">
+            📞 Call Now
+        </a>
+
+        <a href="https://wa.me/918874021777"
+           class="secondary-btn"
+           target="_blank"
+           rel="noopener">
+            WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOCATION ================= -->
+
+<section class="info-section section" id="location">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                FIND US
+            </p>
+
+            <h2>
+                VISIT <span>US.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            Conveniently located in the heart of Lucknow.
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <!-- ADDRESS -->
+
+        <div class="info-card">
+
+            <span class="info-label">
+                ADDRESS
+            </span>
+
+            <p>
+                1st Floor, Old R.T.O Compound,<br>
+                Gautam Budh Marg, Latouche Rd,<br>
+                Lucknow, Uttar Pradesh 226001
+            </p>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Shiva+Academy+Fitness+Centre+Lucknow"
+                target="_blank"
+                rel="noopener"
+                class="map-btn">
+
+                Open in Google Maps ↗
+
+            </a>
+
+        </div>
+
+
+        <!-- HOURS -->
+
+        <div class="info-card">
+
+            <span class="info-label">
+                OPENING HOURS
+            </span>
+
+            <div class="hours-list">
+
+                <div>
+                    <span>Monday</span>
+                    <strong>6 AM – 12 AM</strong>
+                </div>
+
+                <div>
+                    <span>Tuesday</span>
+                    <strong>4 AM – 12 AM</strong>
+                </div>
+
+                <div>
+                    <span>Wednesday</span>
+                    <strong>6 AM – 12 AM</strong>
+                </div>
+
+                <div>
+                    <span>Thursday</span>
+                    <strong>6 AM – 12 AM</strong>
+                </div>
+
+                <div>
+                    <span>Friday</span>
+                    <strong>4 AM – 12 AM</strong>
+                </div>
+
+                <div>
+                    <span>Saturday</span>
+                    <strong>6 AM – 12 AM</strong>
+                </div>
+
+                <div>
+                    <span>Sunday</span>
+                    <strong class="closed">
+                        Closed
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INSTAGRAM -->
+
+        <div class="info-card instagram-card">
+
+            <span class="info-label">
+                FOLLOW US
+            </span>
+
+            <div
+                class="instagram-icon"
+                aria-label="Instagram">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+
+                    <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="5">
+                    </rect>
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4.2">
+                    </circle>
+
+                    <circle
+                        cx="17.3"
+                        cy="6.8"
+                        r="1.1"
+                        class="instagram-dot">
+                    </circle>
+
+                </svg>
+
+            </div>
+
+            <h3>
+                Coming Soon
+            </h3>
+
+            <p>
+                Our Instagram page will be available soon.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL CONTACT ================= -->
+
+<section class="final-contact">
+
+    <div>
+
+        <p class="eyebrow">
+            HAVE QUESTIONS?
+        </p>
+
+        <h2>
+            LET'S <span>TALK.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="contact-details">
+
+        <a href="tel:+918874021777">
+            8874021777
+        </a>
+
+        <span>
+            •
+        </span>
+
+        <a
+            href="https://wa.me/918874021777"
+            target="_blank"
+            rel="noopener">
+
+            WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <a href="#home"
+           class="logo"
+           aria-label="Shiva Academy Fitness Centre Home">
+
+            SHIVA <span>ACADEMY</span>
+
+        </a>
+
+        <p>
+            Train Strong. Live Strong.
+        </p>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Shiva Academy Fitness Centre.
+            All Rights Reserved.
+        </span>
+
+        <a href="#home">
+            Back to Top ↑
+        </a>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
